@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Espaço Serissa Ibraimo | Serissa Amor e Doces</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        serissa: '#D4839C',          /* Rosa claro suave e elegante */
+                        'serissa-dark': '#B86580',   /* Tom de rosa moderado para interações */
+                        'serissa-light': '#FDF8F9',  /* Toque de rosa bem claro */
+                        'serissa-cream': '#FDFBF7',  /* Creme suave Clean */
+                        'serissa-soft': '#F3E1E6',   /* Bordas delicadas */
+                        'serissa-gold': '#D4AF37'
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #FDFBF7; -webkit-tap-highlight-color: transparent; }
+        .scroll-clean::-webkit-scrollbar { display: none; }
+        .scroll-clean { -ms-overflow-style: none; scrollbar-width: none; }
+        .img-fade { transition: opacity 0.3s ease-in-out, transform 0.3s ease-out; }
+    </style>
+</head>
+<body class="text-gray-700 antialiased selection:bg-serissa selection:text-white pb-24 md:pb-0">
+
+    <!-- NAV BAR CLEAN -->
+    <header class="bg-white/90 backdrop-blur-md shadow-xs sticky top-0 z-40 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="#inicio" class="flex items-center gap-3">
+                    <img src="imagens/logo.png" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x150/D4839C/FFFFFF?text=Serissa';" alt="Espaço Serissa Ibraimo Logo" class="h-12 w-auto object-contain rounded-full border border-serissa-soft p-0.5">
+                    <div class="flex flex-col">
+                        <span class="text-lg sm:text-xl font-bold text-gray-900 tracking-tight uppercase">Espaço Serissa</span>
+                        <span class="text-[9px] sm:text-[10px] text-serissa uppercase tracking-widest font-semibold italic -mt-1">Amor e Doces</span>
+                    </div>
+                </a>
+                
+                <nav class="hidden md:flex space-x-6 font-medium text-sm text-gray-600">
+                    <a href="#inicio" class="hover:text-serissa transition duration-200">Início</a>
+                    <a href="#cardapio" class="hover:text-serissa transition duration-200">Menu & Produtos</a>
+                    <a href="#galeria" class="hover:text-serissa transition duration-200">Galeria</a>
+                    <a href="#calculadora" class="hover:text-serissa transition duration-200">Calculadora</a>
+                    <a href="#contacto-secao" class="hover:text-serissa transition duration-200">Contacto</a>
+                </nav>
+
+                <button onclick="toggleCarrinho()" class="relative bg-serissa-cream hover:bg-serissa-soft text-serissa px-4 py-2.5 rounded-full transition flex items-center gap-2 font-medium text-sm border border-serissa-soft">
+                    <i class="fa-solid fa-bag-shopping text-serissa text-base"></i>
+                    <span class="hidden sm:inline">Meu Pedido</span>
+                    <span id="cart-count-header" class="bg-serissa text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION CLEAN -->
+    <section id="inicio" class="relative text-gray-800 min-h-[60vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-serissa-cream to-serissa-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 py-12 md:py-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-5 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 bg-white text-serissa border border-serissa-soft px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase shadow-xs">
+                        <i class="fa-solid fa-heart text-serissa"></i> Serissa Amor e Doces
+                    </div>
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-light tracking-tight text-gray-900 leading-tight">Espaço <span class="font-bold text-serissa">Serissa Ibraimo</span></h1>
+                    <p class="text-gray-600 text-base sm:text-lg font-normal italic">Docinhos, Salgadinhos, Bolos Caseiros, Sobremesas e Combos</p>
+                    <p class="text-gray-500 text-xs sm:text-sm leading-relaxed max-w-lg mx-auto md:mx-0">
+                        Localizados na Av. Mártires da Machava 133 Rc. Tornamos cada celebração leve, especial e incrivelmente deliciosa.
+                    </p>
+                    <div class="pt-3 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                        <a href="#cardapio" class="bg-serissa hover:bg-serissa-dark text-white font-semibold px-7 py-3.5 rounded-full shadow-sm transition-all duration-300 text-center uppercase tracking-wider text-xs flex items-center justify-center gap-2">
+                            Ver Menu Completo <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                        <a href="https://wa.me/258842511720?text=Ol%C3%A1!%20Estou%20no%20site%20do%20Espa%C3%A7o%20Serissa%20Ibraimo%20e%20gostaria%20de%20fazer%20uma%20encomenda." target="_blank" rel="noopener noreferrer" class="bg-white hover:bg-gray-50 text-gray-800 border border-gray-200 font-semibold px-7 py-3.5 rounded-full shadow-xs transition-all duration-300 text-center uppercase tracking-wider text-xs flex items-center justify-center gap-2">
+                            Fazer Encomenda <i class="fa-brands fa-whatsapp text-green-600"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- IMAGEM HERO CLEAN -->
+                <div class="flex justify-center md:justify-end">
+                    <div class="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden shadow-sm bg-white p-3 border border-gray-100 group">
+                        <img src="imagens/logo.png" onerror="tratarErroImagem(this)" onclick="abrirZoom(this.src)" alt="Espaço Serissa Ibraimo" class="w-full h-full object-cover rounded-2xl group-hover:scale-102 transition duration-500 cursor-zoom-in">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO: TABELA DE PREÇOS / PRODUTOS -->
+    <section id="cardapio" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center space-y-2 mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Nossas Delícias</h2>
+            <p class="text-gray-500 text-xs sm:text-sm">Explore o nosso menu completo com os preços e opções reais atualizados</p>
+            <div class="w-12 h-0.5 bg-serissa mx-auto mt-2"></div>
+        </div>
+
+        <div class="max-w-lg mx-auto mb-8">
+            <div class="relative flex items-center bg-white shadow-xs border border-gray-200 rounded-full overflow-hidden focus-within:border-serissa focus-within:ring-1 focus-within:ring-serissa transition-all">
+                <span class="pl-5 text-gray-400"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input type="text" id="campo-busca" oninput="filtrarProdutos()" placeholder="O que deseja procurar hoje?" class="w-full pl-3 pr-5 py-3.5 text-sm bg-transparent outline-none text-gray-700">
+            </div>
+        </div>
+
+        <!-- CATEGORIAS -->
+        <div class="w-full border-b border-gray-200/60 mb-10 overflow-hidden">
+            <div class="flex space-x-2 overflow-x-auto pb-3 scroll-clean justify-start md:justify-center" id="container-categorias">
+                <button onclick="filtrarCategoria('todos', this)" class="btn-cat shrink-0 px-4 py-2.5 rounded-full font-semibold bg-serissa text-white text-xs transition shadow-xs">Todos</button>
+                <button onclick="filtrarCategoria('docinhos', this)" class="btn-cat shrink-0 px-4 py-2.5 rounded-full font-medium text-gray-600 hover:text-serissa hover:bg-serissa-cream text-xs transition">Docinhos</button>
+                <button onclick="filtrarCategoria('salgados_fritos', this)" class="btn-cat shrink-0 px-4 py-2.5 rounded-full font-medium text-gray-600 hover:text-serissa hover:bg-serissa-cream text-xs transition">Salgados Fritos</button>
+                <button onclick="filtrarCategoria('salgados_forno', this)" class="btn-cat shrink-0 px-4 py-2.5 rounded-full font-medium text-gray-600 hover:text-serissa hover:bg-serissa-cream text-xs transition">Salgados Forno</button>
+                <button onclick="filtrarCategoria('salgados_diversos', this)" class="btn-cat shrink-0 px-4 py-2.5 rounded-full font-medium text-gray-600 hover:text-serissa hover:bg-serissa-cream text-xs transition">Salgados Diversos</button>
+                <button onclick="filtrarCategoria('bolos_caseiros', this)" class="btn-cat shrink-0 px-4 py-2.5 rounded-full font-medium text-gray-600 hover:text-serissa hover:bg-serissa-cream text-xs transition">Bolos Caseiros</button>
+                <button onclick="filtrarCategoria('bolos_aniversario', this)" class="btn-cat shrink-0 px-4 py-2.5 rounded-full font-medium text-gray-600 hover:text-serissa hover:bg-serissa-cream text-xs transition">Bolos de Aniversário</button>
+                <button onclick="filtrarCategoria('sobremesas', this)" class="btn-cat shrink-0 px-4 py-2.5 rounded-full font-medium text-gray-600 hover:text-serissa hover:bg-serissa-cream text-xs transition">Sobremesas</button>
+                <button onclick="filtrarCategoria('combos', this)" class="btn-cat shrink-0 px-4 py-2.5 rounded-full font-medium text-gray-600 hover:text-serissa hover:bg-serissa-cream text-xs transition">Combos</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="lista-produtos"></div>
+    </section>
+
+    <!-- GALERIA DE FOTOS -->
+    <section id="galeria" class="bg-white py-16 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-2 mb-10">
+                <span class="text-serissa text-xs font-bold uppercase tracking-widest bg-serissa-cream px-3.5 py-1 rounded-full border border-serissa-soft/60">
+                    <i class="fa-solid fa-camera mr-1"></i> Portfólio
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Galeria de Momentos</h2>
+                <p class="text-gray-500 text-xs sm:text-sm">Um olhar próximo sobre a delicadeza dos nossos produtos</p>
+                <div class="w-12 h-0.5 bg-serissa mx-auto mt-2"></div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <div onclick="abrirZoom('imagens/Crepes_frago_atum_.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-serissa-cream group shadow-xs hover:shadow-sm transition cursor-pointer border border-gray-100">
+                    <img src="imagens/Crepes_frago_atum_.jpeg" onerror="tratarErroImagem(this)" alt="Bolo Decorado" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-serissa/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-xl"></i>
+                    </div>
+                </div>
+                <div onclick="abrirZoom('imagens/Chease_cake_frutos_vermelhos.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-serissa-cream group shadow-xs hover:shadow-sm transition cursor-pointer border border-gray-100">
+                    <img src="imagens/Chease_cake_frutos_vermelhos.jpeg" onerror="tratarErroImagem(this)" alt="Bolo Especial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-serissa/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-xl"></i>
+                    </div>
+                </div>
+                <div onclick="abrirZoom('imagens/mini_espetadas_Frango_carne_vaca.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-serissa-cream group shadow-xs hover:shadow-sm transition cursor-pointer border border-gray-100">
+                    <img src="imagens/mini_espetadas_Frango_carne_vaca.jpeg" onerror="tratarErroImagem(this)" alt="Salgadinhos" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-serissa/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-xl"></i>
+                    </div>
+                </div>
+                <div onclick="abrirZoom('imagens/boloscaseiros/1.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-serissa-cream group shadow-xs hover:shadow-sm transition cursor-pointer border border-gray-100">
+                    <img src="imagens/boloscaseiros/1.jpeg" onerror="tratarErroImagem(this)" alt="Docinhos Especial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-serissa/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-xl"></i>
+                    </div>
+                </div>
+                <div onclick="abrirZoom('imagens/boloscaseiros/2.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-serissa-cream group shadow-xs hover:shadow-sm transition cursor-pointer border border-gray-100">
+                    <img src="imagens/boloscaseiros/2.jpeg" onerror="tratarErroImagem(this)" alt="Docinhos Especial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-serissa/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-xl"></i>
+                    </div>
+                </div>
+                <div onclick="abrirZoom('imagens/tarte_atum_frango.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-serissa-cream group shadow-xs hover:shadow-sm transition cursor-pointer border border-gray-100">
+                    <img src="imagens/tarte_atum_frango.jpeg" onerror="tratarErroImagem(this)" alt="Docinhos Especial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-serissa/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-xl"></i>
+                    </div>
+                </div>
+                <div onclick="abrirZoom('imagens/Mini_sobremesa_de_maracujá.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-serissa-cream group shadow-xs hover:shadow-sm transition cursor-pointer border border-gray-100">
+                    <img src="imagens/Mini_sobremesa_de_maracujá.jpeg" onerror="tratarErroImagem(this)" alt="Docinhos Especial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-serissa/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-xl"></i>
+                    </div>
+                </div>
+                <div onclick="abrirZoom('imagens/boloaniversariodecorado/19.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-serissa-cream group shadow-xs hover:shadow-sm transition cursor-pointer border border-gray-100">
+                    <img src="imagens/boloaniversariodecorado/19.jpeg" onerror="tratarErroImagem(this)" alt="Docinhos Especial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-serissa/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-xl"></i>
+                    </div>
+                </div>
+                <div onclick="abrirZoom('imagens/boloaniversariodecorado/20.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-serissa-cream group shadow-xs hover:shadow-sm transition cursor-pointer border border-gray-100">
+                    <img src="imagens/boloaniversariodecorado/20.jpeg" onerror="tratarErroImagem(this)" alt="Docinhos Especial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-serissa/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-xl"></i>
+                    </div>
+                </div>
+                <div onclick="abrirZoom('imagens/boloaniversariodecorado/11.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-serissa-cream group shadow-xs hover:shadow-sm transition cursor-pointer border border-gray-100">
+                    <img src="imagens/boloaniversariodecorado/11.jpeg" onerror="tratarErroImagem(this)" alt="Docinhos Especial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-serissa/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-xl"></i>
+                    </div>
+                </div>
+                <div onclick="abrirZoom('imagens/boloaniversariodecorado/23.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-serissa-cream group shadow-xs hover:shadow-sm transition cursor-pointer border border-gray-100">
+                    <img src="imagens/boloaniversariodecorado/23.jpeg" onerror="tratarErroImagem(this)" alt="Docinhos Especial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-serissa/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-xl"></i>
+                    </div>
+                </div>
+                <div onclick="abrirZoom('imagens/boloaniversariodecorado/15.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-serissa-cream group shadow-xs hover:shadow-sm transition cursor-pointer border border-gray-100">
+                    <img src="imagens/boloaniversariodecorado/15.jpeg" onerror="tratarErroImagem(this)" alt="Docinhos Especial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-serissa/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULADORA DE EVENTOS -->
+    <section id="calculadora" class="bg-serissa-cream py-16 border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-2 mb-10">
+                <span class="text-xs font-semibold text-serissa uppercase tracking-wider">Simulador Clean</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Calculadora de Eventos</h2>
+                <p class="text-gray-500 text-xs sm:text-sm">Descubra a quantidade ideal de salgadinhos, docinhos e o bolo perfeito</p>
+                <div class="w-12 h-0.5 bg-serissa mx-auto mt-2"></div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xs border border-serissa-soft space-y-6">
+                <form id="formCalculadora" onsubmit="calcularEvento(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="calcPessoas" class="block text-xs font-bold text-gray-600 uppercase tracking-wider mb-2">Nº de Convidados *</label>
+                        <input type="number" id="calcPessoas" min="1" placeholder="Ex: 25" required class="w-full p-3.5 border border-gray-200 rounded-2xl text-sm focus:outline-none focus:border-serissa bg-serissa-cream/50">
+                    </div>
+
+                    <div>
+                        <label for="calcTipo" class="block text-xs font-bold text-gray-600 uppercase tracking-wider mb-2">Tipo de Evento *</label>
+                        <select id="calcTipo" required class="w-full p-3.5 border border-gray-200 rounded-2xl text-sm focus:outline-none focus:border-serissa bg-serissa-cream/50">
+                            <option value="Aniversário">Aniversário</option>
+                            <option value="Noivado">Noivado</option>
+                            <option value="Casamento">Casamento</option>
+                            <option value="Festa Corporativa">Festa / Reunião</option>
+                        </select>
+                    </div>
+
+                    <div class="sm:col-span-2 pt-2">
+                        <button type="submit" class="w-full bg-serissa hover:bg-serissa-dark text-white font-semibold py-4 rounded-full transition shadow-xs flex items-center justify-center gap-2 text-xs sm:text-sm uppercase tracking-wide">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Calcular Estimativa
+                        </button>
+                    </div>
+                </form>
+
+                <div id="resultadoCalculadora" class="hidden bg-serissa-cream p-6 rounded-2xl border border-serissa-soft space-y-4">
+                    <h3 class="font-bold text-gray-900 text-sm sm:text-base border-b border-serissa-soft pb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-clipboard-check text-serissa"></i> Sugestão do Espaço Serissa Ibraimo:
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-sm">
+                        <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-xs">
+                            <strong class="text-gray-500 block text-[11px] uppercase">Salgadinhos:</strong>
+                            <span id="resSalgados" class="text-serissa font-bold text-base mt-1 block">0 dúzias</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-xs">
+                            <strong class="text-gray-500 block text-[11px] uppercase">Docinhos:</strong>
+                            <span id="resDocinhos" class="text-serissa font-bold text-base mt-1 block">0 dúzias</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-xs">
+                            <strong class="text-gray-500 block text-[11px] uppercase">Bolo Recomendado:</strong>
+                            <span id="resBolo" class="text-serissa font-bold text-base mt-1 block">Tamanho Pequeno</span>
+                        </div>
+                    </div>
+
+                    <button onclick="enviarCalculoWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3.5 rounded-full shadow-xs transition flex items-center justify-center gap-2 text-xs uppercase tracking-wide">
+                        <i class="fa-brands fa-whatsapp text-base"></i> Pedir Orçamento Deste Cálculo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE CONTACTO & M-PESA -->
+    <section id="contacto-secao" class="bg-white py-16 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-2 mb-12">
+                <span class="text-serissa text-xs font-bold uppercase tracking-widest bg-serissa-cream px-3 py-1 rounded-full border border-serissa-soft/60">
+                    <i class="fa-solid fa-paper-plane mr-1"></i> Atendimento
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Entre em Contacto</h2>
+                <p class="text-gray-500 text-xs sm:text-sm">Ao fazer a encomenda só será aceite mediante pagamento (M-Pesa, Cash, Transf. Bancária).</p>
+                <div class="w-12 h-0.5 bg-serissa mx-auto mt-2"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto mb-8">
+                <!-- TELEFONE / WHATSAPP -->
+                <div class="bg-serissa-cream p-6 rounded-3xl border border-serissa-soft/60 shadow-xs text-center space-y-3">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto text-serissa text-lg shadow-xs">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm">Telefone & WhatsApp</h3>
+                    <p class="text-[11px] text-gray-500">Linha Principal & Loja</p>
+                    <a href="https://wa.me/258842511720" target="_blank" class="block font-bold text-serissa hover:underline text-xs tracking-wide">
+                        +258 84 251 1720
+                    </a>
+                    <a href="https://wa.me/258846312184" target="_blank" class="block text-gray-600 hover:text-serissa text-[11px]">
+                        Loja: +258 84 631 2184
+                    </a>
+                </div>
+
+                <!-- PAGAMENTO M-PESA -->
+                <div class="bg-serissa-cream p-6 rounded-3xl border border-serissa-soft shadow-xs text-center space-y-3">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto text-red-500 text-lg shadow-xs font-bold">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm">Pagamento M-Pesa</h3>
+                    <p class="text-[11px] text-gray-500">Confirmação de Encomendas</p>
+                    <div class="bg-white p-2.5 rounded-2xl text-[11px] space-y-0.5 shadow-xs border border-gray-100">
+                        <p class="font-bold text-serissa text-xs">84 251 1720 / 84 631 2184</p>
+                        <p class="text-gray-600">Espaço Serissa Ibraimo</p>
+                    </div>
+                </div>
+
+                <!-- LOCALIZAÇÃO -->
+                <div class="bg-serissa-cream p-6 rounded-3xl border border-serissa-soft/60 shadow-xs text-center space-y-3">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto text-serissa text-lg shadow-xs">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm">Endereço</h3>
+                    <p class="text-[11px] text-gray-500">Retirada na nossa loja</p>
+                    <span class="inline-block font-semibold text-gray-700 text-xs">
+                        Av. Mártires da Machava 133 Rc
+                    </span>
+                </div>
+
+                <!-- INSTAGRAM -->
+                <div class="bg-serissa-cream p-6 rounded-3xl border border-serissa-soft/60 shadow-xs text-center space-y-3">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto text-serissa text-lg shadow-xs">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm">Instagram</h3>
+                    <p class="text-[11px] text-gray-500">Siga nossas novidades</p>
+                    <a href="https://instagram.com/serissa_amor_e_doces" target="_blank" class="inline-block font-semibold text-serissa text-xs hover:underline">
+                        @serissa_amor_e_doces
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DE ZOOM / LIGHTBOX -->
+    <div id="modalZoom" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm cursor-zoom-out" onclick="fecharZoom()">
+        <button onclick="fecharZoom()" class="absolute top-5 right-5 text-white/80 hover:text-white text-3xl z-50 p-2"><i class="fa-solid fa-xmark"></i></button>
+        <img id="imgModalZoom" src="" alt="Imagem Ampliada" class="max-w-full max-h-[90vh] object-contain rounded-2xl shadow-2xl transition-transform duration-300">
+    </div>
+
+    <!-- MODAL DE ESCOLHA DE OPÇÕES E SABORES -->
+    <div id="modalOpcoes" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-3 sm:p-4 backdrop-blur-xs">
+        <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-xl transform transition-all flex flex-col max-h-[90vh]">
+            <div class="relative bg-serissa text-white p-5 flex items-center justify-between">
+                <h3 id="modalOpcoesTitulo" class="font-bold text-base text-white">Escolher Opção</h3>
+                <button onclick="fecharModalOpcoes()" class="text-white/80 hover:text-white text-xl p-1"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto space-y-4 flex-1" id="modalOpcoesCorpo"></div>
+
+            <div class="p-5 border-t border-gray-100 bg-serissa-cream flex items-center justify-between gap-3">
+                <div>
+                    <span class="text-[10px] text-gray-400 block uppercase">Preço Total</span>
+                    <span id="modalOpcoesPreco" class="text-lg font-bold text-serissa">0 MZN</span>
+                </div>
+                <button onclick="confirmarAdicaoCarrinho()" class="bg-serissa hover:bg-serissa-dark text-white px-6 py-3 rounded-full font-semibold text-xs transition shadow-xs flex items-center gap-2">
+                    <i class="fa-solid fa-cart-plus"></i> Adicionar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- DRAWER / MODAL DO CARRINHO -->
+    <div id="carrinho-modal" class="fixed inset-0 bg-black/50 z-50 hidden transition-opacity duration-300 flex justify-end">
+        <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between transform transition-transform duration-300">
+            <div class="p-5 border-b border-gray-100 flex items-center justify-between bg-serissa text-white">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-bag-shopping text-white text-lg"></i>
+                    <h3 class="font-bold text-base">Seu Pedido</h3>
+                </div>
+                <button onclick="toggleCarrinho()" class="text-white/80 hover:text-white text-xl p-1"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="p-5 overflow-y-auto flex-1 space-y-3" id="itens-carrinho"></div>
+
+            <div class="p-5 border-t border-gray-100 bg-serissa-cream space-y-4">
+                <div class="bg-white p-3 rounded-2xl border border-serissa-soft text-xs space-y-1">
+                    <span class="block font-bold text-serissa uppercase tracking-wider">💳 Pagamento M-Pesa:</span>
+                    <p class="text-gray-600 text-[11px]"><strong>Nº:</strong> 84 251 1720 / 84 631 2184 | <strong>Titular:</strong> Espaço Serissa</p>
+                </div>
+
+                <div class="bg-white p-3.5 rounded-2xl border border-gray-200/80 space-y-2">
+                    <span class="block text-[11px] font-bold text-gray-700 uppercase tracking-wider">Data e Local de Retirada / Levantamento:</span>
+                    <div class="grid grid-cols-1 gap-2">
+                        <div>
+                            <label for="dataEntrega" class="block text-[10px] font-semibold text-gray-400 uppercase">Data Desejada *</label>
+                            <input type="date" id="dataEntrega" class="w-full p-2.5 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-serissa bg-serissa-cream/50" required>
+                        </div>
+                        <div>
+                            <label for="localEntrega" class="block text-[10px] font-semibold text-gray-400 uppercase">Observações / Bairro *</label>
+                            <input type="text" id="localEntrega" placeholder="Ex: Retirada na Loja / Av. Mártires da Machava" class="w-full p-2.5 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-serissa bg-serissa-cream/50" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between text-base font-bold text-gray-800 pt-2 border-t border-gray-200/60">
+                    <span>Total Final:</span>
+                    <span id="total-carrinho" class="text-xl text-serissa font-bold">0 MZN</span>
+                </div>
+
+                <button onclick="enviarPedidoWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3.5 rounded-full shadow-xs transition flex items-center justify-center gap-2 text-xs uppercase tracking-wide">
+                    <i class="fa-brands fa-whatsapp text-base"></i> Enviar Pedido via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <a href="https://wa.me/258842511720?text=Ol%C3%A1!%20Estou%20no%20site%20do%20Espa%C3%A7o%20Serissa%20Ibraimo%20e%20gostaria%20de%20fazer%20um%20pedido." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-3.5 md:px-5 md:py-3 rounded-full shadow-md transition-all duration-300 flex items-center gap-2 group hover:scale-105 border-2 border-white"
+       aria-label="Atendimento WhatsApp">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="hidden md:inline font-semibold text-xs uppercase tracking-wider">Fazer Encomenda</span>
+    </a>
+
+    <!-- BARRA DE MENU FLUTUANTE MOBILE -->
+    <nav class="fixed bottom-3 left-4 right-4 z-40 bg-white/95 backdrop-blur-md rounded-2xl shadow-md border border-gray-200/60 p-1.5 md:hidden">
+        <div class="flex justify-around items-center">
+            <a href="#inicio" class="flex flex-col items-center py-1 px-2 text-gray-500 hover:text-serissa transition text-center">
+                <i class="fa-solid fa-house text-sm"></i>
+                <span class="text-[10px] font-medium mt-0.5">Início</span>
+            </a>
+            <a href="#cardapio" class="flex flex-col items-center py-1 px-2 text-gray-500 hover:text-serissa transition text-center">
+                <i class="fa-solid fa-list text-sm"></i>
+                <span class="text-[10px] font-medium mt-0.5">Menu</span>
+            </a>
+            <a href="#galeria" class="flex flex-col items-center py-1 px-2 text-gray-500 hover:text-serissa transition text-center">
+                <i class="fa-solid fa-camera text-sm"></i>
+                <span class="text-[10px] font-medium mt-0.5">Galeria</span>
+            </a>
+            <button onclick="toggleCarrinho()" class="relative flex flex-col items-center py-1 px-2 text-serissa font-bold transition text-center">
+                <i class="fa-solid fa-bag-shopping text-sm"></i>
+                <span class="text-[10px] font-medium mt-0.5">Pedido</span>
+                <span id="cart-count-float" class="absolute -top-1 -right-1 bg-serissa text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center border border-white">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- FOOTER CLEAN -->
+    <footer id="contacto" class="bg-white text-gray-600 pt-12 pb-20 md:pb-8 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div class="space-y-3 flex flex-col items-center md:items-start">
+                <div class="flex items-center gap-3">
+                    <img src="imagens/logo.png" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x150/D4839C/FFFFFF?text=Serissa';" alt="Logo Rodapé" class="h-10 w-auto object-contain bg-serissa-cream rounded-full p-1 border border-serissa-soft">
+                    <h3 class="text-base font-bold text-gray-900 uppercase">Espaço Serissa Ibraimo</h3>
+                </div>
+                <p class="text-gray-500 text-xs leading-relaxed">Docinhos, Salgadinhos, Bolos Caseiros, Sobremesas e Combos preparados com total dedicação e carinho.</p>
+            </div>
+            
+            <div class="space-y-2 text-xs">
+                <h4 class="font-bold uppercase text-gray-900 tracking-wider mb-2">Localização & Contacto</h4>
+                <p><i class="fa-solid fa-location-dot mr-2 text-serissa"></i> Av. Mártires da Machava 133 Rc</p>
+                <p><i class="fa-solid fa-phone mr-2 text-serissa"></i> +258 84 251 1720 / 84 631 2184</p>
+                <p><i class="fa-brands fa-instagram mr-2 text-serissa"></i> @serissa_amor_e_doces</p>
+            </div>
+
+            <div class="space-y-2 text-xs">
+                <h4 class="font-bold uppercase text-gray-900 tracking-wider mb-2">Atendimento</h4>
+                <p class="text-gray-500">Segunda a Sábado</p>
+                <p class="font-semibold text-gray-800">08h00 às 18h00</p>
+            </div>
+        </div>
+
+        <hr class="border-gray-100 my-8 max-w-7xl mx-auto">
+        <div class="text-center text-xs text-gray-400">&copy; 2026 Espaço Serissa Ibraimo (Serissa Amor e Doces) - Todos os direitos reservados.</div>
+    </footer>
+
+    <!-- SCRIPTS JS -->
+    <script>
+        // TABELA REAL DE PRODUTOS E PREÇOS EXATOS ATUALIZADA
+        const produtosSerissa = [
+            {
+                id: 1,
+                nome: "Docinhos Variados (Dúzia)",
+                categoria: "docinhos",
+                descricao: "Preço por dúzia. Variedade artesanal irresistível de docinhos tradicionais e gourmet.",
+                imagens: ["imagens/Quindins.jpeg", "imagens/brigadeiro_chocolate_coco.jpeg", "imagens/Quadrados_de_cenoura.jpeg"],
+                opcoes: [
+                    { nome: "Chocolatinhos de Bolacha (12 un)", preco: 600 },
+                    { nome: "Orelhudos Custarde (12 un)", preco: 750 },
+                    { nome: "Canudinhos Doces de Massa Folhada (12 un)", preco: 700 },
+                    { nome: "Brigadeiros (Tradicional Chocolate ou Coco) (12 un)", preco: 650 },
+                    { nome: "Quadrados de Chocolate com Coco (12 un)", preco: 800 },
+                    { nome: "Quadrados de Cenoura (12 un)", preco: 800 },
+                    { nome: "Tarteletes de Fruta (12 un)", preco: 650 },
+                    { nome: "Cupcakes (Chocolate, Baunilha, Formigueiro c/ creme) (12 un)", preco: 1200 },
+                    { nome: "Mini Quindins (12 un)", preco: 750 },
+                    { nome: "Cake Pops (12 un)", preco: 1300 }
+                ]
+            },
+            {
+                id: 2,
+                nome: "Salgados Fritos (Dúzia)",
+                categoria: "salgados_fritos",
+                descricao: "Preço por dúzia. Crocantes, bem recheados e fresquinhos.",
+                imagens: [""],
+                opcoes: [
+                    { nome: "Chamussas (Frango / Carne) (12 un)", preco: 350 },
+                    { nome: "Rissóis Camarão (12 un)", preco: 350 },
+                    { nome: "Coxinhas de Frango (12 un)", preco: 350 },
+                    { nome: "Spring Roll Vegetais (12 un)", preco: 350 },
+                    { nome: "Spring Queijo (12 un)", preco: 550 }
+                ]
+            },
+            {
+                id: 3,
+                nome: "Salgados de Forno (Dúzia)",
+                categoria: "salgados_forno",
+                descricao: "Preço por dúzia. Assados no forno com recheios deliciosos.",
+                imagens: ["imagens/canudinhos_atum_frango_camarao.jpeg"],
+                opcoes: [
+                    { nome: "Empadinhas de Frango (12 un)", preco: 400 },
+                    { nome: "Mini Quiches (Frango, Espinafre e Queijo, Camarão) (12 un)", preco: 400 },
+                    { nome: "Mini Pizzas (Queijo, Frango, Atum, Vegetais) (12 un)", preco: 400 },
+                    { nome: "Canudinhos (Frango, Atum, Camarão) (12 un)", preco: 650 },
+                    { nome: "Folhados (Frango, Carne Moída, Salsicha) (12 un)", preco: 650 },
+                    { nome: "Pãezinhos Frango / Atum (12 un)", preco: 400 }
+                ]
+            },
+            {
+                id: 4,
+                nome: "Salgados Diversos (Mín. 2 Dúzias)",
+                categoria: "salgados_diversos",
+                descricao: "Preço por dúzia. Mínimo de encomenda: 2 dúzias.",
+                imagens: ["imagens/mini_saladas.jpeg", "imagens/mini_sandes.jpeg", "imagens/mini_espetadas_Frango_carne_vaca.jpeg", "imagens/Mini_espetadas_queijo_e_tomate.jpeg"],
+                opcoes: [
+                    { nome: "Espetadas Frango (12 un)", preco: 950 },
+                    { nome: "Espetadas Carne Vaca (12 un)", preco: 1100 },
+                    { nome: "Mini Saladas (Atum, Frango, Camarão) (12 un)", preco: 700 },
+                    { nome: "Mini Espetadas Queijo e Tomate Cereja (12 un)", preco: 500 },
+                    { nome: "Mini Hambúrguer / Mini Cachorro (12 un)", preco: 750 },
+                    { nome: "Mini Pregos (12 un)", preco: 800 },
+                    { nome: "Mini Crepes (Frango, Atum, Camarão) (12 un)", preco: 800 },
+                    { nome: "Sandes de Atum, Frango (12 un)", preco: 700 },
+                    { nome: "Sandes de Ovo Mexido (12 un)", preco: 550 },
+                    { nome: "Sandes de Fiambre e Queijo (12 un)", preco: 650 }
+                ]
+            },
+            {
+                id: 5,
+                nome: "Bolos Caseiros Tradicionais",
+                categoria: "bolos_caseiros",
+                descricao: "Escolha o tamanho/tipo e o sabor desejado.",
+                imagens: ["imagens/boloscaseiros/1.jpeg", "imagens/boloscaseiros/2.jpeg", "imagens/boloscaseiros/3.jpeg", "imagens/boloscaseiros/4.jpeg", "imagens/boloscaseiros/5.jpeg", "imagens/boloscaseiros/6.jpeg"],
+                tipoSelecao: "bolo_caseiro",
+                opcoesTamanho: [
+                    { nome: "Bolo Caseiro Simples", preco: 1500 },
+                    { nome: "Bolo Caseiro com Adicional de Calda", preco: 1700 }
+                ],
+                sabores: ["Chocolate", "Baunilha", "Cenoura", "Maracujá", "Mármore", "Formigueiro"]
+            },
+            {
+                id: 6,
+                nome: "Bolo de Aniversário Personalizado",
+                categoria: "bolos_aniversario",
+                descricao: "Preços mediante cotação (variam pelo tamanho e decoração). Sabores disponíveis: Chocolate, Baunilha, Maracujá, Laranja, Red Velvet, Floresta Negra, Café, Formigueiro, Mármore.",
+                imagens: ["imagens/boloaniversariodecorado/1.jpeg", "imagens/boloaniversariodecorado/2.jpeg", "imagens/boloaniversariodecorado/3.jpeg", "imagens/boloaniversariodecorado/4.jpeg", "imagens/boloaniversariodecorado/5.jpeg", "imagens/boloaniversariodecorado/6.jpeg", "imagens/boloaniversariodecorado/7.jpeg", "imagens/boloaniversariodecorado/8.jpeg", "imagens/boloaniversariodecorado/9.jpeg", "imagens/boloaniversariodecorado/10.jpeg", "imagens/boloaniversariodecorado/11.jpeg", "imagens/boloaniversariodecorado/12.jpeg","imagens/boloaniversariodecorado/13.jpeg", "imagens/boloaniversariodecorado/14.jpeg", "imagens/boloaniversariodecorado/15.jpeg", "imagens/boloaniversariodecorado/16.jpeg", "imagens/boloaniversariodecorado/17.jpeg", "imagens/boloaniversariodecorado/18.jpeg"],
+                tipoSelecao: "bolo_aniversario_cotacao",
+                sabores: ["Chocolate", "Baunilha", "Maracujá", "Laranja", "Red Velvet", "Floresta Negra", "Café", "Formigueiro", "Mármore"]
+            },
+            {
+                id: 7,
+                nome: "Sobremesas Especiais",
+                categoria: "sobremesas",
+                descricao: "Cada sobremesa serve em média 15 a 18 pessoas.",
+                imagens: ["imagens/Mini_sobremesa_de_maracujá.jpeg","imagens/Mini_colchão_de_noiva.jpeg", "imagens/Chease_cake_frutos_vermelhos.jpeg", "imagens/Mini_pavê_de_chocolate.jpeg", "imagens/Mini_pavê_de_chocolate1.jpeg"],
+                opcoes: [
+                    { nome: "Mousse de Chocolate", preco: 1950 },
+                    { nome: "Mousse de Maracujá", preco: 1800 },
+                    { nome: "Colchão de Noiva", preco: 1800 },
+                    { nome: "Pavê de Chocolate", preco: 1800 },
+                    { nome: "Cheesecake (Frutos Vermelhos, Maracujá e Limão)", preco: 1900 },
+                    { nome: "Bolo de Bolacha (Creme de Manteiga)", preco: 1700 }
+                ]
+            },
+            {
+                id: 8,
+                nome: "Combos Especiais de Salgados",
+                categoria: "combos",
+                descricao: "Inclui variedade de salgados (Chamussas, Rissóis, Spring Vegetais, Coxinhas, Quadrados de Galinha, Mini Pizzas, Mini Quiches, Pãezinhos, Pastéis de Forno e Empadinhas).",
+                imagens: ["imagens/combosalgados.jpeg", "imagens/mesadoces.jpeg"],
+                opcoes: [
+                    { nome: "Mini Combo (26 Unidades Total)", preco: 950 },
+                    { nome: "Combo Completo (52 Unidades Total)", preco: 1900 }
+                ]
+            }
+        ];
+
+        let categoriaAtual = 'todos';
+        let indicesImagensAtivas = {};
+        let carrinho = [];
+        let produtoSelecionadoTemp = null;
+        let opcaoSelecionadaTemp = null;
+        let saborSelecionadoTemp = null;
+        let timerSlideshow = null;
+        let ultimoCalculoEvento = null;
+
+        const IMG_FALLBACK = "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format&fit=crop";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderizarProdutos(produtosSerissa);
+            iniciarSlideshowAutomatico();
+        });
+
+        function tratarErroImagem(imgElement) {
+            imgElement.onerror = null;
+            imgElement.src = IMG_FALLBACK;
+        }
+
+        function abrirZoom(src) {
+            const modal = document.getElementById('modalZoom');
+            const img = document.getElementById('imgModalZoom');
+            img.src = src;
+            modal.classList.remove('hidden');
+        }
+
+        function fecharZoom() {
+            document.getElementById('modalZoom').classList.add('hidden');
+        }
+
+        function iniciarSlideshowAutomatico() {
+            if (timerSlideshow) clearInterval(timerSlideshow);
+            timerSlideshow = setInterval(() => {
+                produtosSerissa.forEach(produto => {
+                    if (produto.imagens && produto.imagens.length > 1) {
+                        mudarFotoCard(produto.id, 1, false);
+                    }
+                });
+            }, 3500);
+        }
+
+        function renderizarProdutos(lista) {
+            const container = document.getElementById('lista-produtos');
+            container.innerHTML = "";
+
+            if (!lista || lista.length === 0) {
+                container.innerHTML = `<p class="col-span-full text-center text-gray-400 italic py-12 text-sm">Nenhum produto encontrado nesta categoria.</p>`;
+                return;
+            }
+
+            lista.forEach(p => {
+                const fotosArray = p.imagens && p.imagens.length > 0 ? p.imagens : [IMG_FALLBACK];
+                const pId = p.id;
+                if (indicesImagensAtivas[pId] === undefined) indicesImagensAtivas[pId] = 0;
+
+                let precoExibicao = "";
+                let botaoTexto = "Adicionar";
+                let iconeBotao = "fa-cart-plus";
+
+                if (p.tipoSelecao === 'bolo_aniversario_cotacao') {
+                    precoExibicao = "Sob Consulta / Cotação";
+                    botaoTexto = "Pedir Cotação";
+                    iconeBotao = "fa-whatsapp";
+                } else if (p.precoBase) {
+                    precoExibicao = `${parseFloat(p.precoBase).toLocaleString('pt-MZ')} MZN`;
+                } else if (p.opcoes && p.opcoes.length > 0) {
+                    const menorPreco = Math.min(...p.opcoes.map(o => o.preco));
+                    precoExibicao = `A partir de ${menorPreco.toLocaleString('pt-MZ')} MZN`;
+                } else if (p.opcoesTamanho && p.opcoesTamanho.length > 0) {
+                    const menorPreco = Math.min(...p.opcoesTamanho.map(o => o.preco));
+                    precoExibicao = `A partir de ${menorPreco.toLocaleString('pt-MZ')} MZN`;
+                }
+
+                let catBadgeText = p.categoria.replace('_', ' ').toUpperCase();
+
+                // Dots de indicador
+                let dotsHtml = "";
+                if (fotosArray.length > 1) {
+                    dotsHtml = `<div class="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5 z-10">`;
+                    fotosArray.forEach((_, idx) => {
+                        const activeClass = idx === indicesImagensAtivas[pId] ? 'bg-white w-3' : 'bg-white/60 w-1.5';
+                        dotsHtml += `<span id="dot-${pId}-${idx}" class="h-1.5 rounded-full transition-all duration-300 ${activeClass}"></span>`;
+                    });
+                    dotsHtml += `</div>`;
+                }
+
+                // Botões de navegação
+                let navBtnsHtml = "";
+                if (fotosArray.length > 1) {
+                    navBtnsHtml = `
+                        <button onclick="event.stopPropagation(); mudarFotoCard(${pId}, -1, true)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-7 h-7 rounded-full flex items-center justify-center transition shadow-xs opacity-0 group-hover:opacity-100 z-10">
+                            <i class="fa-solid fa-chevron-left text-[10px]"></i>
+                        </button>
+                        <button onclick="event.stopPropagation(); mudarFotoCard(${pId}, 1, true)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-7 h-7 rounded-full flex items-center justify-center transition shadow-xs opacity-0 group-hover:opacity-100 z-10">
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    `;
+                }
+
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-3xl overflow-hidden shadow-xs hover:shadow-sm border border-gray-100 flex flex-col justify-between transition-all duration-300 group";
+
+                card.innerHTML = `
+                    <div>
+                        <div class="relative overflow-hidden aspect-[4/3] bg-serissa-cream group/img">
+                            <img id="img-slide-${pId}" src="${fotosArray[indicesImagensAtivas[pId]]}" onerror="tratarErroImagem(this)" onclick="abrirZoom(this.src)" alt="${p.nome}" class="img-fade w-full h-full object-cover group-hover:scale-102 cursor-zoom-in">
+                            <span class="absolute top-3 right-3 bg-white/95 backdrop-blur-xs text-serissa text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider z-10 shadow-xs border border-serissa-soft/50">${catBadgeText}</span>
+                            ${navBtnsHtml}
+                            ${dotsHtml}
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h3 class="text-base font-bold text-gray-900 group-hover:text-serissa transition-colors">${p.nome}</h3>
+                            <p class="text-gray-500 text-xs leading-relaxed line-clamp-3">${p.descricao}</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex items-center justify-between mt-2">
+                        <div>
+                            <span class="text-[10px] text-gray-400 block">${p.tipoSelecao === 'bolo_aniversario_cotacao' ? 'Nota' : 'Preço'}</span>
+                            <span class="text-xs sm:text-sm font-bold ${p.tipoSelecao === 'bolo_aniversario_cotacao' ? 'text-gray-600 italic text-[11px]' : 'text-serissa sm:text-base'}">${precoExibicao}</span>
+                        </div>
+                        <button onclick="cliqueBotaoProduto(${p.id})" class="bg-serissa hover:bg-serissa-dark text-white px-4 py-2.5 rounded-full font-semibold text-xs transition duration-300 flex items-center gap-2 shadow-xs">
+                            <i class="fa-solid ${iconeBotao}"></i> ${botaoTexto}
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function mudarFotoCard(id, direcao, interacaoManual = false) {
+            const produto = produtosSerissa.find(p => p.id === id);
+            if (!produto) return;
+            const imgElement = document.getElementById(`img-slide-${id}`);
+            if (!imgElement) return;
+
+            const fotos = produto.imagens && produto.imagens.length > 0 ? produto.imagens : [IMG_FALLBACK];
+            let index = indicesImagensAtivas[id] + direcao;
+
+            if (index >= fotos.length) index = 0;
+            if (index < 0) index = fotos.length - 1;
+
+            indicesImagensAtivas[id] = index;
+
+            fotos.forEach((_, idx) => {
+                const dot = document.getElementById(`dot-${id}-${idx}`);
+                if (dot) {
+                    if (idx === index) {
+                        dot.className = "h-1.5 rounded-full transition-all duration-300 bg-white w-3";
+                    } else {
+                        dot.className = "h-1.5 rounded-full transition-all duration-300 bg-white/60 w-1.5";
+                    }
+                }
+            });
+
+            imgElement.style.opacity = '0.3';
+            setTimeout(() => {
+                imgElement.src = fotos[index];
+                imgElement.style.opacity = '1';
+            }, 150);
+
+            if (interacaoManual) iniciarSlideshowAutomatico();
+        }
+
+        function filtrarCategoria(cat, btn) {
+            categoriaAtual = cat;
+            document.querySelectorAll('.btn-cat').forEach(b => {
+                b.className = "btn-cat shrink-0 px-4 py-2.5 rounded-full font-medium text-gray-600 hover:text-serissa hover:bg-serissa-cream text-xs transition";
+            });
+            if (btn) btn.className = "btn-cat shrink-0 px-4 py-2.5 rounded-full font-semibold bg-serissa text-white text-xs transition shadow-xs";
+
+            filtrarProdutos();
+        }
+
+        function filtrarProdutos() {
+            const termo = document.getElementById('campo-busca').value.toLowerCase().trim();
+            const filtrados = produtosSerissa.filter(p => {
+                const bateCategoria = (categoriaAtual === 'todos' || p.categoria === categoriaAtual);
+                const bateTexto = p.nome.toLowerCase().includes(termo) || p.descricao.toLowerCase().includes(termo);
+                return bateCategoria && bateTexto;
+            });
+            renderizarProdutos(filtrados);
+        }
+
+        function cliqueBotaoProduto(idProduto) {
+            const produto = produtosSerissa.find(p => p.id === idProduto);
+            if (!produto) return;
+
+            if (produto.tipoSelecao === 'bolo_aniversario_cotacao') {
+                abrirModalBoloCotacao(produto);
+            } else if (produto.tipoSelecao) {
+                abrirModalBoloComSabor(produto);
+            } else if (produto.opcoes && produto.opcoes.length > 0) {
+                abrirModalOpcoes(produto);
+            } else {
+                adicionarAoCarrinhoDireto(produto);
+            }
+        }
+
+        function abrirModalBoloCotacao(produto) {
+            produtoSelecionadoTemp = produto;
+            const modal = document.getElementById('modalOpcoes');
+            const titulo = document.getElementById('modalOpcoesTitulo');
+            const corpo = document.getElementById('modalOpcoesCorpo');
+            const precoSpan = document.getElementById('modalOpcoesPreco');
+
+            titulo.innerText = `Pedir Cotação: ${produto.nome}`;
+            corpo.innerHTML = "";
+
+            saborSelecionadoTemp = produto.sabores[0];
+
+            let htmlSabores = `<div class="space-y-2"><label class="block text-xs font-bold text-gray-700 uppercase">Escolha o Sabor de Preferência *</label><div class="grid grid-cols-2 gap-2">`;
+            produto.sabores.forEach((sabor, idx) => {
+                const checked = idx === 0 ? 'checked' : '';
+                htmlSabores += `
+                    <label class="flex items-center gap-2 p-2.5 border border-gray-100 rounded-xl cursor-pointer hover:border-serissa bg-serissa-cream/50 transition">
+                        <input type="radio" name="saborAniversario" value="${sabor}" ${checked} onchange="selecionarSaborAniversario('${sabor}')" class="accent-serissa">
+                        <span class="text-xs font-medium text-gray-800">${sabor}</span>
+                    </label>
+                `;
+            });
+            htmlSabores += `</div></div>`;
+
+            let htmlDetalhes = `
+                <div class="space-y-2 pt-2">
+                    <label class="block text-xs font-bold text-gray-700 uppercase">Detalhes / Tema / Fatias pretendidas *</label>
+                    <textarea id="detalhesCotacao" rows="3" placeholder="Ex: Para 25 pessoas, tema infantil com detalhes em dourado..." class="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-serissa bg-serissa-cream/50"></textarea>
+                </div>
+            `;
+
+            corpo.innerHTML = htmlSabores + htmlDetalhes;
+            precoSpan.innerText = "Sob Cotação";
+            modal.classList.remove('hidden');
+        }
+
+        function selecionarSaborAniversario(sabor) {
+            saborSelecionadoTemp = sabor;
+        }
+
+        function abrirModalOpcoes(produto) {
+            produtoSelecionadoTemp = produto;
+            saborSelecionadoTemp = null;
+            const modal = document.getElementById('modalOpcoes');
+            const titulo = document.getElementById('modalOpcoesTitulo');
+            const corpo = document.getElementById('modalOpcoesCorpo');
+            const precoSpan = document.getElementById('modalOpcoesPreco');
+
+            titulo.innerText = `Escolher Opção: ${produto.nome}`;
+            corpo.innerHTML = "";
+
+            produto.opcoes.forEach((opcao, idx) => {
+                const checked = idx === 0 ? 'checked' : '';
+                if (idx === 0) opcaoSelecionadaTemp = opcao;
+
+                const div = document.createElement('label');
+                div.className = "flex items-center justify-between p-3.5 border border-gray-100 rounded-2xl cursor-pointer hover:border-serissa bg-serissa-cream/50 transition";
+                div.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <input type="radio" name="opcaoProduto" value="${idx}" ${checked} onchange="selecionarOpcaoTemp(${produto.id}, ${idx})" class="accent-serissa">
+                        <span class="text-sm font-semibold text-gray-800">${opcao.nome}</span>
+                    </div>
+                    <span class="text-sm font-bold text-serissa">${opcao.preco.toLocaleString('pt-MZ')} MZN</span>
+                `;
+                corpo.appendChild(div);
+            });
+
+            if (opcaoSelecionadaTemp) {
+                precoSpan.innerText = `${opcaoSelecionadaTemp.preco.toLocaleString('pt-MZ')} MZN`;
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function abrirModalBoloComSabor(produto) {
+            produtoSelecionadoTemp = produto;
+            const modal = document.getElementById('modalOpcoes');
+            const titulo = document.getElementById('modalOpcoesTitulo');
+            const corpo = document.getElementById('modalOpcoesCorpo');
+            const precoSpan = document.getElementById('modalOpcoesPreco');
+
+            titulo.innerText = `Personalizar: ${produto.nome}`;
+            corpo.innerHTML = "";
+
+            opcaoSelecionadaTemp = produto.opcoesTamanho[0];
+            saborSelecionadoTemp = produto.sabores[0];
+
+            let htmlTamanhos = `<div class="space-y-2"><label class="block text-xs font-bold text-gray-700 uppercase">1. Escolha o Tamanho / Tipo *</label><div class="space-y-2">`;
+            produto.opcoesTamanho.forEach((t, idx) => {
+                const checked = idx === 0 ? 'checked' : '';
+                htmlTamanhos += `
+                    <label class="flex items-center justify-between p-3 border border-gray-100 rounded-xl cursor-pointer hover:border-serissa bg-serissa-cream/50 transition">
+                        <div class="flex items-center gap-3">
+                            <input type="radio" name="tamanhoBolo" value="${idx}" ${checked} onchange="selecionarTamanhoBolo(${produto.id}, ${idx})" class="accent-serissa">
+                            <span class="text-xs font-semibold text-gray-800">${t.nome}</span>
+                        </div>
+                        <span class="text-xs font-bold text-serissa">${t.preco.toLocaleString('pt-MZ')} MZN</span>
+                    </label>
+                `;
+            });
+            htmlTamanhos += `</div></div>`;
+
+            let htmlSabores = `<div class="space-y-2 pt-2"><label class="block text-xs font-bold text-gray-700 uppercase">2. Escolha o Sabor *</label><div class="grid grid-cols-2 gap-2">`;
+            produto.sabores.forEach((sabor, idx) => {
+                const checked = idx === 0 ? 'checked' : '';
+                htmlSabores += `
+                    <label class="flex items-center gap-2 p-2.5 border border-gray-100 rounded-xl cursor-pointer hover:border-serissa bg-serissa-cream/50 transition">
+                        <input type="radio" name="saborBolo" value="${sabor}" ${checked} onchange="selecionarSaborBolo('${sabor}')" class="accent-serissa">
+                        <span class="text-xs font-medium text-gray-800">${sabor}</span>
+                    </label>
+                `;
+            });
+            htmlSabores += `</div></div>`;
+
+            corpo.innerHTML = htmlTamanhos + htmlSabores;
+            precoSpan.innerText = `${opcaoSelecionadaTemp.preco.toLocaleString('pt-MZ')} MZN`;
+            modal.classList.remove('hidden');
+        }
+
+        function selecionarTamanhoBolo(idProduto, idxTamanho) {
+            const produto = produtosSerissa.find(p => p.id === idProduto);
+            if (!produto) return;
+            opcaoSelecionadaTemp = produto.opcoesTamanho[idxTamanho];
+            document.getElementById('modalOpcoesPreco').innerText = `${opcaoSelecionadaTemp.preco.toLocaleString('pt-MZ')} MZN`;
+        }
+
+        function selecionarSaborBolo(sabor) {
+            saborSelecionadoTemp = sabor;
+        }
+
+        function selecionarOpcaoTemp(idProduto, idxOpcao) {
+            const produto = produtosSerissa.find(p => p.id === idProduto);
+            if (!produto) return;
+            opcaoSelecionadaTemp = produto.opcoes[idxOpcao];
+            document.getElementById('modalOpcoesPreco').innerText = `${opcaoSelecionadaTemp.preco.toLocaleString('pt-MZ')} MZN`;
+        }
+
+        function fecharModalOpcoes() {
+            document.getElementById('modalOpcoes').classList.add('hidden');
+            produtoSelecionadoTemp = null;
+            opcaoSelecionadaTemp = null;
+            saborSelecionadoTemp = null;
+        }
+
+        function confirmarAdicaoCarrinho() {
+            if (!produtoSelecionadoTemp) return;
+
+            if (produtoSelecionadoTemp.tipoSelecao === 'bolo_aniversario_cotacao') {
+                const obs = document.getElementById('detalhesCotacao').value.trim();
+                const telefone = "258842511720";
+                let msg = `👋 Olá, Espaço Serissa Ibraimo!\nGostaria de solicitar uma cotação para *Bolo de Aniversário Personalizado*:\n\n`;
+                msg += `🍰 *Sabor Escolhido:* ${saborSelecionadoTemp}\n`;
+                msg += `📝 *Detalhes / Tema / Fatias:* ${obs || 'Não especificado'}\n\n`;
+                msg += `Por favor, informem o preço e disponibilidade!`;
+
+                fecharModalOpcoes();
+                window.open(`https://wa.me/${telefone}?text=${encodeURIComponent(msg)}`, '_blank');
+                return;
+            }
+
+            if (!opcaoSelecionadaTemp) return;
+
+            let detalhesTexto = opcaoSelecionadaTemp.nome;
+            if (saborSelecionadoTemp) {
+                detalhesTexto = `${opcaoSelecionadaTemp.nome} | Sabor: ${saborSelecionadoTemp}`;
+            }
+
+            const item = {
+                idCart: Date.now(),
+                id: produtoSelecionadoTemp.id,
+                nome: produtoSelecionadoTemp.nome,
+                detalhes: detalhesTexto,
+                preco: opcaoSelecionadaTemp.preco,
+                qtd: 1
+            };
+
+            carrinho.push(item);
+            fecharModalOpcoes();
+            atualizarCarrinho();
+            toggleCarrinho(true);
+        }
+
+        function adicionarAoCarrinhoDireto(produto) {
+            const item = {
+                idCart: Date.now(),
+                id: produto.id,
+                nome: produto.nome,
+                detalhes: produto.categoria.toUpperCase(),
+                preco: produto.precoBase,
+                qtd: 1
+            };
+
+            carrinho.push(item);
+            atualizarCarrinho();
+            toggleCarrinho(true);
+        }
+
+        function removerItemCarrinho(idCart) {
+            carrinho = carrinho.filter(i => i.idCart !== idCart);
+            atualizarCarrinho();
+        }
+
+        function alterarQuantidade(idCart, delta) {
+            const item = carrinho.find(i => i.idCart === idCart);
+            if (item) {
+                item.qtd += delta;
+                if (item.qtd <= 0) {
+                    removerItemCarrinho(idCart);
+                    return;
+                }
+            }
+            atualizarCarrinho();
+        }
+
+        function atualizarCarrinho() {
+            const container = document.getElementById('itens-carrinho');
+            const headerCount = document.getElementById('cart-count-header');
+            const floatCounts = document.querySelectorAll('#cart-count-float');
+
+            container.innerHTML = "";
+            let totalItens = 0;
+
+            if (carrinho.length === 0) {
+                container.innerHTML = `<div class="text-center py-12 text-gray-400">
+                    <i class="fa-solid fa-bag-shopping text-4xl mb-3 block text-serissa/30"></i>
+                    <p class="text-xs">Seu carrinho está vazio.</p>
+                </div>`;
+            } else {
+                carrinho.forEach(item => {
+                    const subtotal = item.preco * item.qtd;
+                    totalItens += item.qtd;
+
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = "bg-serissa-cream p-3.5 rounded-2xl border border-serissa-soft/60 space-y-2 relative group";
+                    itemDiv.innerHTML = `
+                        <div class="flex items-start justify-between pr-6">
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-xs">${item.nome}</h4>
+                                <p class="text-[11px] text-serissa font-medium">${item.detalhes}</p>
+                            </div>
+                            <span class="font-bold text-serissa text-xs">${subtotal.toLocaleString('pt-MZ')} MZN</span>
+                        </div>
+                        
+                        <button onclick="removerItemCarrinho(${item.idCart})" title="Remover item" class="absolute top-3 right-3 text-red-400 hover:text-red-600 p-1 text-xs">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+
+                        <div class="flex items-center justify-between border-t border-gray-200/50 pt-2">
+                            <span class="text-[10px] text-gray-400">${item.preco.toLocaleString('pt-MZ')} MZN un.</span>
+                            <div class="flex items-center border border-gray-200 rounded-xl bg-white overflow-hidden">
+                                <button onclick="alterarQuantidade(${item.idCart}, -1)" class="px-2.5 py-0.5 text-gray-600 hover:bg-gray-100 text-xs font-bold">-</button>
+                                <span class="px-2.5 text-xs font-bold text-gray-800">${item.qtd}</span>
+                                <button onclick="alterarQuantidade(${item.idCart}, 1)" class="px-2.5 py-0.5 text-gray-600 hover:bg-gray-100 text-xs font-bold">+</button>
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(itemDiv);
+                });
+            }
+
+            if (headerCount) headerCount.innerText = totalItens;
+            floatCounts.forEach(fc => fc.innerText = totalItens);
+            atualizarTotalCarrinho();
+        }
+
+        function atualizarTotalCarrinho() {
+            let subtotal = 0;
+            carrinho.forEach(item => subtotal += (item.preco * item.qtd));
+            document.getElementById('total-carrinho').innerText = `${subtotal.toLocaleString('pt-MZ')} MZN`;
+        }
+
+        function toggleCarrinho(forcarAbertura = false) {
+            const modal = document.getElementById('carrinho-modal');
+            if (forcarAbertura || modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+
+        function enviarPedidoWhatsApp() {
+            if (carrinho.length === 0) {
+                alert("O seu carrinho está vazio.");
+                return;
+            }
+
+            const dataEntrega = document.getElementById('dataEntrega').value;
+            const localEntrega = document.getElementById('localEntrega').value.trim();
+
+            if (!dataEntrega || !localEntrega) {
+                alert("Por favor, preencha a data e as observações de retirada antes de enviar o pedido.");
+                return;
+            }
+
+            const telefone = "258842511720";
+            let mensagem = "👋 Olá, Espaço Serissa Ibraimo! Gostaria de realizar o seguinte pedido:\n\n";
+
+            let subtotal = 0;
+            carrinho.forEach(item => {
+                const sub = item.preco * item.qtd;
+                subtotal += sub;
+                mensagem += `• *${item.nome}* (${item.detalhes})\n  *Qtd:* ${item.qtd}x | *Subtotal:* ${sub.toLocaleString('pt-MZ')} MZN\n\n`;
+            });
+
+            mensagem += `─────────────\n`;
+            mensagem += `📅 *Data Desejada:* ${dataEntrega}\n`;
+            mensagem += `📍 *Retirada/Local:* ${localEntrega}\n`;
+            mensagem += `💰 *Total Final:* ${subtotal.toLocaleString('pt-MZ')} MZN\n\n`;
+            mensagem += `💳 *Método de Pagamento (M-Pesa/Cash):* 84 251 1720 / 84 631 2184 (Espaço Serissa Ibraimo)\n\n`;
+            mensagem += `Por favor, confirmem a disponibilidade da encomenda. Obrigado!`;
+
+            window.open(`https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`, '_blank');
+        }
+
+        function calcularEvento(e) {
+            e.preventDefault();
+            const pessoas = parseInt(document.getElementById('calcPessoas').value);
+            const tipo = document.getElementById('calcTipo').value;
+
+            if (!pessoas || pessoas < 1) return;
+
+            const salgadosDuzias = Math.ceil((pessoas * 6) / 12);
+            const docinhosDuzias = Math.ceil((pessoas * 4) / 12);
+            let boloSugerido = "Bolo Mini (5/8 fatias)";
+
+            if (pessoas > 8 && pessoas <= 18) boloSugerido = "Bolo Pequeno (15/18 fatias)";
+            else if (pessoas > 18 && pessoas <= 35) boloSugerido = "Bolo Médio (30/35 fatias)";
+            else if (pessoas > 35) boloSugerido = "Bolo Grande (45/50 fatias)";
+
+            document.getElementById('resSalgados').innerText = `${salgadosDuzias} dúzias`;
+            document.getElementById('resDocinhos').innerText = `${docinhosDuzias} dúzias`;
+            document.getElementById('resBolo').innerText = boloSugerido;
+
+            ultimoCalculoEvento = { pessoas, tipo, salgadosDuzias, docinhosDuzias, boloSugerido };
+            document.getElementById('resultadoCalculadora').classList.remove('hidden');
+        }
+
+        function enviarCalculoWhatsApp() {
+            if (!ultimoCalculoEvento) return;
+            const telefone = "258842511720";
+            
+            let msg = `👋 Olá, Espaço Serissa Ibraimo!\n\nFiz um cálculo no site para o meu evento e gostaria de solicitar um orçamento:\n\n`;
+            msg += `👥 *Nº de Convidados:* ${ultimoCalculoEvento.pessoas}\n`;
+            msg += `🎉 *Tipo de Evento:* ${ultimoCalculoEvento.tipo}\n\n`;
+            msg += `📌 *Estimativa Gerada:*\n`;
+            msg += `• *Salgadinhos:* ${ultimoCalculoEvento.salgiosDuzias || ultimoCalculoEvento.salgadosDuzias} dúzias\n`;
+            msg += `• *Docinhos:* ${ultimoCalculoEvento.docinhosDuzias} dúzias\n`;
+            msg += `• *Bolo Recomendado:* ${ultimoCalculoEvento.boloSugerido}\n\n`;
+            msg += `Gostaria de confirmar orçamento e disponibilidade!`;
+
+            window.open(`https://wa.me/${telefone}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
